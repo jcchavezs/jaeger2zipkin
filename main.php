@@ -86,4 +86,4 @@ $logger->pushHandler(new StreamHandler('php://stdout', Logger::WARNING));
 $reporter = new Http(['endpoint_url' => $argv[2] ?? 'http://localhost:9411/api/v2/spans'], null, $logger);
 $reporter->report($spans);
 
-echo "Spans reported successfully\n";
+echo "Spans reported successfully to zipkin endpoint 😃.\n";
