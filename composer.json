@@ -1,0 +1,17 @@
+{
+    "name": "jcchavezs/jaeger2zipkin",
+    "description": "simple script to post jaeger downloaded data",
+    "type": "project",
+    "require": {
+        "openzipkin/zipkin": "dev-fixes_serializer_for_special_cases",
+        "monolog/monolog": "^2.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "José Carlos Chávez",
+            "email": "jcchavezs@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
