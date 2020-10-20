@@ -55,11 +55,20 @@ if (count($argv) < 2) {
 $jaegerTracePath = $argv[1];
 $content = file_get_contents($jaegerTracePath);
 if ($content === false) {
-    printf("Failed to read \"%s\"", $jaegerTracePath);
+    printf("Failed to read \"%s\".", $jaegerTracePath);
+    exit(1);
+}
+
+if ($content === '') {
+    printf("File \"%s\" is empty.", $jaegerTracePath);
     exit(1);
 }
 
 $jaegerTrace = json_decode($content, true);
+if ($jaegerTrace === false || $jaegerTrace === null) {
+    printf("Failed to decode \"%s\".", $jaegerTracePath);
+    exit(1);
+}
 
 $processesMap = $jaegerTrace['data'][0]['processes'];
 
