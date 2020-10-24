@@ -12,8 +12,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 
 COPY composer.json composer.json
 COPY composer.lock composer.lock
-COPY main.php main.php
+COPY Main.php Main.php
+COPY JaegerToZipkinSpan.php JaegerToZipkinSpan.php
 
-RUN php composer.phar install
+RUN php composer.phar install --no-dev
 
-ENTRYPOINT [ "php", "main.php" ]
+ENTRYPOINT [ "php", "Main.php" ]

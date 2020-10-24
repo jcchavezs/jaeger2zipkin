@@ -3,7 +3,7 @@
     "description": "simple script to post jaeger downloaded data",
     "type": "project",
     "require": {
-        "openzipkin/zipkin": "dev-fixes_serializer_for_special_cases",
+        "openzipkin/zipkin": "^2.0.1",
         "monolog/monolog": "^2.1"
     },
     "license": "MIT",
@@ -13,5 +13,17 @@
             "email": "jcchavezs@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "autoload": {
+        "files": [
+            "JaegerToZipkinSpan.php"
+        ]
+    },
+    "scripts": {
+        "build-image": "docker build -t jaeger2zipkin .",
+        "test": "phpunit JaegerToZipkinSpanTest.php"
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^9.4"
+    }
 }
