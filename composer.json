@@ -1,9 +1,9 @@
 {
     "name": "jcchavezs/jaeger2zipkin",
-    "description": "simple script to post jaeger downloaded data",
+    "description": "simple script to POST jaeger downloaded data",
     "type": "project",
     "require": {
-        "openzipkin/zipkin": "^2.0.1",
+        "openzipkin/zipkin": "^2.0.2",
         "monolog/monolog": "^2.1"
     },
     "license": "MIT",
