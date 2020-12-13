@@ -1,0 +1,12 @@
+name: docker_build
+
+on: [push, pull_request]
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Docker image
+        run: docker build -t jaeger2zipkin .
